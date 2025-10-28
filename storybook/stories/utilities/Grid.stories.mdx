@@ -1,1 +1,312 @@
-  
+import { Meta, Canvas, Story } from '@storybook/addon-docs';
+
+<Meta title="Utilities/Grid" />
+
+# Grid Utilities
+
+This section showcases the CSS Grid utilities available in the design system for creating two-dimensional layouts.
+
+## Basic Grid
+
+<Canvas>
+  <Story name="Basic Grid">
+    {() => (
+      <div className="grid grid-3 gap-md">
+        <div className="bg-primary text-white p-md text-center">Grid Item 1</div>
+        <div className="bg-secondary text-white p-md text-center">Grid Item 2</div>
+        <div className="bg-success text-white p-md text-center">Grid Item 3</div>
+        <div className="bg-warning p-md text-center">Grid Item 4</div>
+        <div className="bg-info text-white p-md text-center">Grid Item 5</div>
+        <div className="bg-muted p-md text-center">Grid Item 6</div>
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+### Code Example
+
+```html
+<div className="grid grid-3 gap-md">
+  <div>Grid Item 1</div>
+  <div>Grid Item 2</div>
+  <div>Grid Item 3</div>
+</div>
+```
+
+## Grid Columns
+
+<Canvas>
+  <Story name="Grid Columns">
+    {() => (
+      <div>
+        <div className="grid grid-1 gap-sm mb-md">
+          <div className="bg-primary text-white p-md text-center">1 Column</div>
+        </div>
+        <div className="grid grid-2 gap-sm mb-md">
+          <div className="bg-secondary text-white p-md text-center">2 Columns</div>
+          <div className="bg-secondary text-white p-md text-center">2 Columns</div>
+        </div>
+        <div className="grid grid-3 gap-sm mb-md">
+          <div className="bg-success text-white p-md text-center">3 Columns</div>
+          <div className="bg-success text-white p-md text-center">3 Columns</div>
+          <div className="bg-success text-white p-md text-center">3 Columns</div>
+        </div>
+        <div className="grid grid-4 gap-sm">
+          <div className="bg-warning p-md text-center">4 Columns</div>
+          <div className="bg-warning p-md text-center">4 Columns</div>
+          <div className="bg-warning p-md text-center">4 Columns</div>
+          <div className="bg-warning p-md text-center">4 Columns</div>
+        </div>
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+### Code Example
+
+```html
+<div className="grid grid-2 gap-md">
+  <div>Column 1</div>
+  <div>Column 2</div>
+</div>
+<div className="grid grid-4 gap-sm">
+  <div>Column 1</div>
+  <div>Column 2</div>
+  <div>Column 3</div>
+  <div>Column 4</div>
+</div>
+```
+
+## Auto-fit Grid
+
+<Canvas>
+  <Story name="Auto-fit Grid">
+    {() => (
+      <div className="grid-auto gap-md">
+        <div className="bg-primary text-white p-md text-center">Auto-fit Item 1</div>
+        <div className="bg-secondary text-white p-md text-center">Auto-fit Item 2</div>
+        <div className="bg-success text-white p-md text-center">Auto-fit Item 3</div>
+        <div className="bg-warning p-md text-center">Auto-fit Item 4</div>
+        <div className="bg-info text-white p-md text-center">Auto-fit Item 5</div>
+        <div className="bg-muted p-md text-center">Auto-fit Item 6</div>
+        <div className="bg-danger text-white p-md text-center">Auto-fit Item 7</div>
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+### Code Example
+
+```html
+<div className="grid-auto gap-md">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <!-- Items automatically fit available space -->
+</div>
+```
+
+## Grid Gap
+
+<Canvas>
+  <Story name="Grid Gap">
+    {() => (
+      <div>
+        <div className="grid grid-3 grid-gap-0 mb-md">
+          <div className="bg-primary text-white p-md text-center">No Gap</div>
+          <div className="bg-primary text-white p-md text-center">No Gap</div>
+          <div className="bg-primary text-white p-md text-center">No Gap</div>
+        </div>
+        <div className="grid grid-3 grid-gap-xs mb-md">
+          <div className="bg-secondary text-white p-md text-center">Extra Small</div>
+          <div className="bg-secondary text-white p-md text-center">Gap</div>
+          <div className="bg-secondary text-white p-md text-center">Extra Small</div>
+        </div>
+        <div className="grid grid-3 grid-gap-sm mb-md">
+          <div className="bg-success text-white p-md text-center">Small Gap</div>
+          <div className="bg-success text-white p-md text-center">Small Gap</div>
+          <div className="bg-success text-white p-md text-center">Small Gap</div>
+        </div>
+        <div className="grid grid-3 grid-gap-md">
+          <div className="bg-warning p-md text-center">Medium Gap</div>
+          <div className="bg-warning p-md text-center">Medium Gap</div>
+          <div className="bg-warning p-md text-center">Medium Gap</div>
+        </div>
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+### Code Example
+
+```html
+<div className="grid grid-3 grid-gap-md">
+  <div>Item with medium gap</div>
+  <div>Between each item</div>
+  <div>In the grid</div>
+</div>
+```
+
+## Grid Rows
+
+<Canvas>
+  <Story name="Grid Rows">
+    {() => (
+      <div className="grid grid-2 grid-rows-3 gap-sm" style={{height: '200px'}}>
+        <div className="bg-primary text-white p-sm text-center">Row 1</div>
+        <div className="bg-secondary text-white p-sm text-center">Row 1</div>
+        <div className="bg-success text-white p-sm text-center">Row 2</div>
+        <div className="bg-warning p-sm text-center">Row 2</div>
+        <div className="bg-info text-white p-sm text-center">Row 3</div>
+        <div className="bg-muted p-sm text-center">Row 3</div>
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+### Code Example
+
+```html
+<div className="grid grid-2 grid-rows-3 gap-sm">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+  <div>Item 5</div>
+  <div>Item 6</div>
+</div>
+```
+
+## Grid Spanning
+
+<Canvas>
+  <Story name="Grid Spanning">
+    {() => (
+      <div className="grid grid-4 gap-sm">
+        <div className="grid-col-span-2 bg-primary text-white p-md text-center">Spans 2 columns</div>
+        <div className="bg-secondary text-white p-md text-center">Normal</div>
+        <div className="bg-success text-white p-md text-center">Normal</div>
+        <div className="bg-warning p-md text-center">Normal</div>
+        <div className="bg-info text-white p-md text-center">Normal</div>
+        <div className="grid-col-span-3 bg-muted p-md text-center">Spans 3 columns</div>
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+### Code Example
+
+```html
+<div className="grid grid-4 gap-sm">
+  <div className="grid-col-span-2">Spans 2 columns</div>
+  <div>Normal item</div>
+  <div>Normal item</div>
+  <div>Normal item</div>
+  <div>Normal item</div>
+  <div className="grid-col-span-3">Spans 3 columns</div>
+</div>
+```
+
+## Real-world Examples
+
+<Canvas>
+  <Story name="Dashboard Layout">
+    {() => (
+      <div className="grid grid-3 gap-lg">
+        <div className="bg-white p-lg" style={{border: '1px solid var(--digdir-color-muted)'}}>
+          <h3 className="mb-md">Analytics</h3>
+          <div className="text-2xl font-bold text-primary">1,234</div>
+          <p className="text-muted">Total Users</p>
+        </div>
+        <div className="bg-white p-lg" style={{border: '1px solid var(--digdir-color-muted)'}}>
+          <h3 className="mb-md">Revenue</h3>
+          <div className="text-2xl font-bold text-success">$12,345</div>
+          <p className="text-muted">This Month</p>
+        </div>
+        <div className="bg-white p-lg" style={{border: '1px solid var(--digdir-color-muted)'}}>
+          <h3 className="mb-md">Orders</h3>
+          <div className="text-2xl font-bold text-warning">567</div>
+          <p className="text-muted">Pending</p>
+        </div>
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Image Gallery">
+    {() => (
+      <div className="grid grid-3 gap-md">
+        <div className="bg-muted p-lg text-center">Image 1</div>
+        <div className="bg-muted p-lg text-center">Image 2</div>
+        <div className="bg-muted p-lg text-center">Image 3</div>
+        <div className="grid-col-span-2 bg-muted p-lg text-center">Wide Image 4</div>
+        <div className="bg-muted p-lg text-center">Image 5</div>
+        <div className="bg-muted p-lg text-center">Image 6</div>
+        <div className="bg-muted p-lg text-center">Image 7</div>
+        <div className="bg-muted p-lg text-center">Image 8</div>
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Content Layout">
+    {() => (
+      <div className="grid grid-4 gap-lg">
+        <div className="grid-col-span-3">
+          <article className="bg-white p-lg" style={{border: '1px solid var(--digdir-color-muted)'}}>
+            <h1 className="text-xl mb-md">Main Article Title</h1>
+            <p className="mb-md">This is the main content area that spans 3 columns of the 4-column grid layout.</p>
+            <p>Grid layouts provide excellent control over two-dimensional space, making them perfect for complex layouts like this content-sidebar arrangement.</p>
+          </article>
+        </div>
+        <div>
+          <aside className="bg-muted p-lg" style={{border: '1px solid var(--digdir-color-muted)'}}>
+            <h3 className="mb-md">Sidebar</h3>
+            <ul>
+              <li className="mb-sm">Related Link 1</li>
+              <li className="mb-sm">Related Link 2</li>
+              <li className="mb-sm">Related Link 3</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Responsive Grid">
+    {() => (
+      <div className="grid-auto gap-md">
+        <div className="bg-primary text-white p-lg text-center">Responsive Item 1</div>
+        <div className="bg-secondary text-white p-lg text-center">Responsive Item 2</div>
+        <div className="bg-success text-white p-lg text-center">Responsive Item 3</div>
+        <div className="bg-warning p-lg text-center">Responsive Item 4</div>
+        <div className="bg-info text-white p-lg text-center">Responsive Item 5</div>
+        <div className="bg-muted p-lg text-center">Responsive Item 6</div>
+        <div className="bg-danger text-white p-lg text-center">Responsive Item 7</div>
+        <div className="bg-primary text-white p-lg text-center">Responsive Item 8</div>
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+## Best Practices
+
+- Use CSS Grid for two-dimensional layouts
+- Combine with auto-fit for responsive behavior
+- Use grid spanning for complex layouts
+- Maintain consistent gap spacing
+- Consider content hierarchy when spanning columns
+- Test layouts across different screen sizes
+
+## Accessibility Notes
+
+- Ensure logical reading order with grid layouts
+- Use semantic HTML within grid containers
+- Maintain keyboard navigation flow
+- Provide sufficient spacing between interactive elements
+- Test with screen readers for proper content order
+- Consider focus management in complex grid layouts

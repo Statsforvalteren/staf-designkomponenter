@@ -1,1 +1,348 @@
-  
+import { Meta, Canvas, Story } from '@storybook/addon-docs';
+import ResponsiveTable from '../../../src/components/react/ResponsiveTable';
+
+<Meta title="Components/ResponsiveTable" component={ResponsiveTable} />
+
+# ResponsiveTable
+
+The ResponsiveTable component provides a flexible and accessible way to display tabular data with built-in responsive behavior and customizable styling options.
+
+## Basic Usage
+
+<Canvas>
+  <Story name="Basic">
+    {() => (
+      <ResponsiveTable
+        data={[
+          { name: 'John Doe', email: 'john.doe@example.com', role: 'Administrator', status: 'Active' },
+          { name: 'Jane Smith', email: 'jane.smith@example.com', role: 'User', status: 'Inactive' },
+          { name: 'Bob Johnson', email: 'bob.johnson@example.com', role: 'Moderator', status: 'Active' },
+        ]}
+        headers={[
+          { key: 'name', label: 'Name' },
+          { key: 'email', label: 'Email' },
+          { key: 'role', label: 'Role' },
+          { key: 'status', label: 'Status' },
+        ]}
+        caption="User Management Table"
+      />
+    )}
+  </Story>
+</Canvas>
+
+### Code Example
+
+```jsx
+import ResponsiveTable from './components/ResponsiveTable';
+
+const data = [
+  { name: 'John Doe', email: 'john.doe@example.com', role: 'Administrator' },
+  { name: 'Jane Smith', email: 'jane.smith@example.com', role: 'User' },
+];
+
+const headers = [
+  { key: 'name', label: 'Name' },
+  { key: 'email', label: 'Email' },
+  { key: 'role', label: 'Role' },
+];
+
+<ResponsiveTable
+  data={data}
+  headers={headers}
+  caption="User Table"
+/>
+```
+
+## With Hover Effect
+
+<Canvas>
+  <Story name="With Hover">
+    {() => (
+      <ResponsiveTable
+        data={[
+          { product: 'Laptop', price: '$999', category: 'Electronics', stock: '15' },
+          { product: 'Book', price: '$20', category: 'Education', stock: '50' },
+          { product: 'Chair', price: '$150', category: 'Furniture', stock: '8' },
+        ]}
+        headers={[
+          { key: 'product', label: 'Product' },
+          { key: 'price', label: 'Price' },
+          { key: 'category', label: 'Category' },
+          { key: 'stock', label: 'Stock' },
+        ]}
+        hover={true}
+        caption="Product Catalog with Hover Effect"
+      />
+    )}
+  </Story>
+</Canvas>
+
+### Code Example
+
+```jsx
+<ResponsiveTable
+  data={productData}
+  headers={productHeaders}
+  hover={true}
+  caption="Product Catalog"
+/>
+```
+
+## Striped Rows
+
+<Canvas>
+  <Story name="Striped">
+    {() => (
+      <ResponsiveTable
+        data={[
+          { name: 'Alice Wilson', department: 'Engineering', position: 'Senior Developer', salary: '$120,000' },
+          { name: 'Charlie Brown', department: 'Marketing', position: 'Marketing Manager', salary: '$85,000' },
+          { name: 'Diana Prince', department: 'HR', position: 'HR Specialist', salary: '$70,000' },
+          { name: 'Eve Adams', department: 'Finance', position: 'Accountant', salary: '$75,000' },
+        ]}
+        headers={[
+          { key: 'name', label: 'Name' },
+          { key: 'department', label: 'Department' },
+          { key: 'position', label: 'Position' },
+          { key: 'salary', label: 'Salary' },
+        ]}
+        striped={true}
+        caption="Employee Information with Striped Rows"
+      />
+    )}
+  </Story>
+</Canvas>
+
+### Code Example
+
+```jsx
+<ResponsiveTable
+  data={employeeData}
+  headers={employeeHeaders}
+  striped={true}
+  caption="Employee Information"
+/>
+```
+
+## Combined Features
+
+<Canvas>
+  <Story name="Combined Features">
+    {() => (
+      <ResponsiveTable
+        data={[
+          { project: 'E-commerce Platform', status: 'On Track', progress: '85%', team: '12', deadline: '2023-12-31' },
+          { project: 'Mobile App Redesign', status: 'At Risk', progress: '60%', team: '8', deadline: '2024-01-15' },
+          { project: 'Data Analytics Dashboard', status: 'In Progress', progress: '40%', team: '6', deadline: '2024-02-28' },
+          { project: 'API Integration', status: 'Completed', progress: '100%', team: '4', deadline: '2023-11-30' },
+        ]}
+        headers={[
+          { key: 'project', label: 'Project' },
+          { key: 'status', label: 'Status' },
+          { key: 'progress', label: 'Progress' },
+          { key: 'team', label: 'Team Size' },
+          { key: 'deadline', label: 'Deadline' },
+        ]}
+        hover={true}
+        striped={true}
+        caption="Project Status Overview"
+      />
+    )}
+  </Story>
+</Canvas>
+
+### Code Example
+
+```jsx
+<ResponsiveTable
+  data={projectData}
+  headers={projectHeaders}
+  hover={true}
+  striped={true}
+  caption="Project Status"
+/>
+```
+
+## With Custom Styling
+
+<Canvas>
+  <Story name="Custom Styling">
+    {() => (
+      <ResponsiveTable
+        data={[
+          { id: '1', username: 'admin', email: 'admin@example.com', role: 'Administrator', lastLogin: '2023-12-01' },
+          { id: '2', username: 'jdoe', email: 'john.doe@example.com', role: 'User', lastLogin: '2023-11-28' },
+          { id: '3', username: 'jsmith', email: 'jane.smith@example.com', role: 'Moderator', lastLogin: '2023-11-25' },
+        ]}
+        headers={[
+          { key: 'id', label: 'ID' },
+          { key: 'username', label: 'Username' },
+          { key: 'email', label: 'Email' },
+          { key: 'role', label: 'Role' },
+          { key: 'lastLogin', label: 'Last Login' },
+        ]}
+        hover={true}
+        className="custom-table"
+        caption="User Management with Custom Styling"
+      />
+    )}
+  </Story>
+</Canvas>
+
+### Code Example
+
+```jsx
+<ResponsiveTable
+  data={userData}
+  headers={userHeaders}
+  hover={true}
+  className="custom-table"
+  caption="User Management"
+/>
+```
+
+## With React Elements
+
+<Canvas>
+  <Story name="With React Elements">
+    {() => (
+      <ResponsiveTable
+        data={[
+          {
+            name: 'John Doe',
+            email: 'john.doe@example.com',
+            status: <span className="text-success">✓ Active</span>,
+            actions: (
+              <div className="flex gap-sm">
+                <button className="bg-primary text-white p-xs">Edit</button>
+                <button className="bg-danger text-white p-xs">Delete</button>
+              </div>
+            )
+          },
+          {
+            name: 'Jane Smith',
+            email: 'jane.smith@example.com',
+            status: <span className="text-muted">Inactive</span>,
+            actions: (
+              <div className="flex gap-sm">
+                <button className="bg-primary text-white p-xs">Edit</button>
+                <button className="bg-danger text-white p-xs">Delete</button>
+              </div>
+            )
+          },
+        ]}
+        headers={[
+          { key: 'name', label: 'Name' },
+          { key: 'email', label: 'Email' },
+          { key: 'status', label: 'Status' },
+          { key: 'actions', label: 'Actions' },
+        ]}
+        hover={true}
+        caption="Table with React Elements"
+      />
+    )}
+  </Story>
+</Canvas>
+
+### Code Example
+
+```jsx
+const dataWithElements = [
+  {
+    name: 'John Doe',
+    status: <span className="text-success">Active</span>,
+    actions: <button>Edit</button>
+  }
+];
+
+<ResponsiveTable
+  data={dataWithElements}
+  headers={headers}
+  caption="Table with React Elements"
+/>
+```
+
+## Non-Responsive Table
+
+<Canvas>
+  <Story name="Non-Responsive">
+    {() => (
+      <ResponsiveTable
+        data={[
+          { code: 'USD', name: 'US Dollar', symbol: '$', rate: '1.00' },
+          { code: 'EUR', name: 'Euro', symbol: '€', rate: '0.85' },
+          { code: 'GBP', name: 'British Pound', symbol: '£', rate: '0.73' },
+          { code: 'JPY', name: 'Japanese Yen', symbol: '¥', rate: '110.25' },
+        ]}
+        headers={[
+          { key: 'code', label: 'Code' },
+          { key: 'name', label: 'Currency Name' },
+          { key: 'symbol', label: 'Symbol' },
+          { key: 'rate', label: 'Exchange Rate' },
+        ]}
+        responsive={false}
+        striped={true}
+        caption="Currency Exchange Rates (Non-Responsive)"
+      />
+    )}
+  </Story>
+</Canvas>
+
+### Code Example
+
+```jsx
+<ResponsiveTable
+  data={currencyData}
+  headers={currencyHeaders}
+  responsive={false}
+  caption="Non-responsive table"
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `TableData[]` | - | Array of objects representing table rows |
+| `headers` | `Header[]` | - | Array defining column headers |
+| `caption` | `string` | - | Table caption for accessibility |
+| `responsive` | `boolean` | `true` | Whether table should be responsive |
+| `hover` | `boolean` | `false` | Enable hover effect on rows |
+| `striped` | `boolean` | `false` | Enable striped row styling |
+| `className` | `string` | `''` | Additional CSS classes |
+
+### Header Object
+
+```typescript
+{
+  key: string;        // Key to access data in row objects
+  label: string;      // Display label for the column
+  sortable?: boolean; // Whether column is sortable (future feature)
+}
+```
+
+### TableData Object
+
+```typescript
+{
+  [key: string]: string | number | React.ReactNode;
+}
+```
+
+## Best Practices
+
+- Always provide meaningful `caption` for screen readers
+- Use `hover` and `striped` props for better UX on larger tables
+- Keep table data simple and scannable
+- Consider table width and content length for responsive behavior
+- Use React elements in data for rich content like status indicators or action buttons
+
+## Accessibility Notes
+
+- Component includes proper ARIA attributes and semantic HTML
+- Table automatically stacks on mobile with data labels
+- Screen readers can navigate table structure properly
+- Color contrast meets WCAG AA standards
+- Keyboard navigation is supported
+- Focus management works correctly
+- Table announces caption and structure to assistive technologies
