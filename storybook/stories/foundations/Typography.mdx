@@ -1,0 +1,104 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import * as Typography from './Typography.stories';
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+This section showcases the typography tokens and utilities available in the design system.
+
+## Typography Tokens
+
+The following typography tokens are available from the Digdir Design System:
+
+- `--digdir-font-size-xs`: Extra small text
+- `--digdir-font-size-sm`: Small text
+- `--digdir-font-size-md`: Medium text
+- `--digdir-font-size-lg`: Large text
+- `--digdir-font-size-xl`: Extra large text
+
+- `--digdir-font-weight-normal`: Normal font weight
+- `--digdir-font-weight-bold`: Bold font weight
+
+- `--digdir-line-height-tight`: Tight line height
+- `--digdir-line-height-normal`: Normal line height
+- `--digdir-line-height-relaxed`: Relaxed line height
+
+## Text Alignment
+
+<Canvas of={Typography.TextAlignment} />
+
+### Code Example
+
+```html
+<p className="text-left">Left aligned</p>
+<p className="text-center">Center aligned</p>
+<p className="text-right">Right aligned</p>
+<p className="text-justify">Justified text</p>
+```
+
+## Font Styles and Sizes
+
+<Canvas of={Typography.FontStyles} />
+
+### Code Example
+
+```html
+<p className="text-lg font-bold">Large bold heading</p>
+<p className="text-md">Regular body text</p>
+<p className="text-sm text-muted">Small muted text</p>
+```
+
+## Line Height
+
+<Canvas of={Typography.LineHeight} />
+
+### Code Example
+
+```html
+<p className="leading-normal">Normal line height for body text</p>
+<p className="leading-relaxed">Relaxed line height for better readability</p>
+```
+
+## Text Transformation
+
+<Canvas of={Typography.TextTransformation} />
+
+### Code Example
+
+```html
+<p className="text-uppercase">UPPERCASE</p>
+<p className="text-capitalize">capitalize</p>
+```
+
+## Text Utilities
+
+<Canvas of={Typography.TextUtilities} />
+
+### Code Example
+
+```html
+<p className="text-truncate">Long text that will be truncated...</p>
+<p className="text-break">Verylongwordthatwillbreak</p>
+```
+
+## Real-world Example
+
+<Canvas of={Typography.ArticleLayout} />
+
+## Best Practices
+
+- Use semantic heading hierarchy (h1-h6) for proper document structure
+- Maintain consistent font sizes and weights across similar content types
+- Choose appropriate line heights based on content length and reading context
+- Consider responsive typography for different screen sizes
+- Use text transformation sparingly and purposefully
+
+## Accessibility Notes
+
+- Ensure sufficient color contrast between text and background
+- Maintain adequate font sizes for readability (minimum 14px for body text)
+- Use semantic HTML elements for proper screen reader navigation
+- Avoid using color alone to convey meaning
+- Test typography in high contrast mode
+- Consider line length (50-75 characters) for optimal reading

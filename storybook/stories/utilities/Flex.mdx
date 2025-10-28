@@ -1,0 +1,117 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import * as Flex from './Flex.stories';
+
+<Meta title="Utilities/Flex" />
+
+# Flexbox Utilities
+
+This section showcases the flexbox utilities available in the design system for creating flexible layouts.
+
+## Basic Flexbox
+
+<Canvas of={Flex.BasicFlex} />
+
+### Code Example
+
+```html
+<div className="flex gap-md">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+```
+
+## Flex Direction
+
+<Canvas of={Flex.FlexDirection} />
+
+### Code Example
+
+```html
+<div className="flex flex-row">Horizontal layout</div>
+<div className="flex flex-col">Vertical layout</div>
+```
+
+## Flex Wrap
+
+<Canvas of={Flex.FlexWrap} />
+
+### Code Example
+
+```html
+<div className="flex flex-wrap">Items wrap to next line</div>
+<div className="flex flex-nowrap">Items stay in one line</div>
+```
+
+## Justify Content
+
+<Canvas of={Flex.JustifyContent} />
+
+### Code Example
+
+```html
+<div className="flex justify-center">Center aligned</div>
+<div className="flex justify-between">Space between items</div>
+<div className="flex justify-around">Space around items</div>
+```
+
+## Align Items
+
+<Canvas of={Flex.AlignItems} />
+
+### Code Example
+
+```html
+<div className="flex items-center">Vertically centered</div>
+<div className="flex items-stretch">Full height items</div>
+```
+
+## Gap Utilities
+
+<Canvas of={Flex.GapSpacing} />
+
+### Code Example
+
+```html
+<div className="flex gap-sm">
+  <div>Item with small gap</div>
+  <div>Between each item</div>
+</div>
+```
+
+## Flex Properties
+
+<Canvas of={Flex.FlexProperties} />
+
+### Code Example
+
+```html
+<div className="flex">
+  <div className="flex-1">Takes available space</div>
+  <div className="flex-none">Fixed size</div>
+</div>
+```
+
+## Real-world Examples
+
+<Canvas of={Flex.NavigationBar} />
+
+<Canvas of={Flex.CardLayout} />
+
+<Canvas of={Flex.FormLayout} />
+
+## Best Practices
+
+- Use flexbox for one-dimensional layouts (row or column)
+- Combine with gap utilities for consistent spacing
+- Use flex properties (flex-1, flex-none) for responsive behavior
+- Consider flex-wrap for responsive layouts
+- Use justify-content and align-items for precise positioning
+
+## Accessibility Notes
+
+- Ensure proper keyboard navigation order
+- Maintain logical tab order with visual layout
+- Use semantic HTML elements within flex containers
+- Ensure sufficient touch targets for interactive elements
+- Test with screen readers and keyboard-only navigation

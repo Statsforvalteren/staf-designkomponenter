@@ -1,0 +1,132 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import * as Grid from './Grid.stories';
+
+<Meta title="Utilities/Grid" />
+
+# Grid Utilities
+
+This section showcases the CSS Grid utilities available in the design system for creating two-dimensional layouts.
+
+## Basic Grid
+
+<Canvas of={Grid.BasicGrid} />
+
+### Code Example
+
+```html
+<div className="grid grid-3 gap-md">
+  <div>Grid Item 1</div>
+  <div>Grid Item 2</div>
+  <div>Grid Item 3</div>
+</div>
+```
+
+## Grid Columns
+
+<Canvas of={Grid.GridColumns} />
+
+### Code Example
+
+```html
+<div className="grid grid-2 gap-md">
+  <div>Column 1</div>
+  <div>Column 2</div>
+</div>
+<div className="grid grid-4 gap-sm">
+  <div>Column 1</div>
+  <div>Column 2</div>
+  <div>Column 3</div>
+  <div>Column 4</div>
+</div>
+```
+
+## Auto-fit Grid
+
+<Canvas of={Grid.AutofitGrid} />
+
+### Code Example
+
+```html
+<div className="grid-auto gap-md">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <!-- Items automatically fit available space -->
+</div>
+```
+
+## Grid Gap
+
+<Canvas of={Grid.GridGap} />
+
+### Code Example
+
+```html
+<div className="grid grid-3 grid-gap-md">
+  <div>Item with medium gap</div>
+  <div>Between each item</div>
+  <div>In the grid</div>
+</div>
+```
+
+## Grid Rows
+
+<Canvas of={Grid.GridRows} />
+
+### Code Example
+
+```html
+<div className="grid grid-2 grid-rows-3 gap-sm">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+  <div>Item 5</div>
+  <div>Item 6</div>
+</div>
+```
+
+## Grid Spanning
+
+<Canvas of={Grid.GridSpanning} />
+
+### Code Example
+
+```html
+<div className="grid grid-4 gap-sm">
+  <div className="grid-col-span-2">Spans 2 columns</div>
+  <div>Normal item</div>
+  <div>Normal item</div>
+  <div>Normal item</div>
+  <div>Normal item</div>
+  <div className="grid-col-span-3">Spans 3 columns</div>
+</div>
+```
+
+## Real-world Examples
+
+<Canvas of={Grid.DashboardLayout} />
+
+<Canvas of={Grid.ImageGallery} />
+
+<Canvas of={Grid.ContentLayout} />
+
+<Canvas of={Grid.ResponsiveGrid} />
+
+## Best Practices
+
+- Use CSS Grid for two-dimensional layouts
+- Combine with auto-fit for responsive behavior
+- Use grid spanning for complex layouts
+- Maintain consistent gap spacing
+- Consider content hierarchy when spanning columns
+- Test layouts across different screen sizes
+
+## Accessibility Notes
+
+- Ensure logical reading order with grid layouts
+- Use semantic HTML within grid containers
+- Maintain keyboard navigation flow
+- Provide sufficient spacing between interactive elements
+- Test with screen readers for proper content order
+- Consider focus management in complex grid layouts
