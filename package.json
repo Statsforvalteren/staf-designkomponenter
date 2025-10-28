@@ -1,0 +1,25 @@
+{
+  "name": "staf-designkomponenter",
+  "version": "0.0.0",
+  "description": "Bruk av digdir/designsystemet hos STAF med ekstra komponenter og tilpasninger.",
+  "keywords": [
+    "designsystemet",
+    "css",
+    "tokens"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@digdir/designsystemet": "^1.5.1",
+    "@digdir/designsystemet-css": "^1.7.1"
+  }
+}
