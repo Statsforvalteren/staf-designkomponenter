@@ -1,6 +1,6 @@
 {
   "name": "staf-designkomponenter",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Bruk av digdir/designsystemet hos STAF med ekstra komponenter og tilpasninger.",
   "keywords": [
     "designsystemet",
@@ -13,13 +13,27 @@
   },
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
+    "build:css": "postcss src/index.css -o dist/index.css",
+    "build:storybook": "storybook build",
+    "storybook": "storybook dev -p 6006",
+    "generate:cem": "cem analyze src --output-file custom-elements.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
+  "dependencies": {
     "@digdir/designsystemet": "^1.5.1",
     "@digdir/designsystemet-css": "^1.7.1"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.10.10",
+    "@storybook/addon-docs": "^10.0.0",
+    "@storybook/react-vite": "^10.0.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "typescript": "^5.3.3",
+    "vite": "^7.1.12"
   }
 }

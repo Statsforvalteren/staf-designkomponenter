@@ -1,0 +1,33 @@
+/* Typography utilities */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+.font-normal { font-weight: var(--digdir-font-weight-normal); }
+.font-bold { font-weight: var(--digdir-font-weight-bold); }
+
+.text-xs { font-size: var(--digdir-font-size-xs); }
+.text-sm { font-size: var(--digdir-font-size-sm); }
+.text-md { font-size: var(--digdir-font-size-md); }
+.text-lg { font-size: var(--digdir-font-size-lg); }
+.text-xl { font-size: var(--digdir-font-size-xl); }
+
+.leading-tight { line-height: var(--digdir-line-height-tight); }
+.leading-normal { line-height: var(--digdir-line-height-normal); }
+.leading-relaxed { line-height: var(--digdir-line-height-relaxed); }
+
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
+.text-capitalize { text-transform: capitalize; }
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-break {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}

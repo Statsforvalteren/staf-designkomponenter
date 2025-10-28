@@ -1,0 +1,59 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import * as Colors from './Colors.stories';
+
+<Meta title="Foundations/Colors" />
+
+# Colors
+
+This section showcases the color tokens and utilities available in the design system.
+
+## Color Tokens
+
+The following color tokens are available from the Digdir Design System:
+
+- `--digdir-color-primary`
+- `--digdir-color-secondary`
+- `--digdir-color-success`
+- `--digdir-color-danger`
+- `--digdir-color-warning`
+- `--digdir-color-info`
+- `--digdir-color-muted`
+- `--digdir-color-white`
+- `--digdir-color-black`
+
+## Text Color Utilities
+
+<Canvas of={Colors.TextColors} />
+
+### Code Example
+
+```html
+<p className="text-primary">Primary text</p>
+<p className="text-success">Success message</p>
+<p className="text-danger">Error message</p>
+```
+
+## Background Color Utilities
+
+<Canvas of={Colors.BackgroundColors} />
+
+### Code Example
+
+```html
+<div className="bg-primary text-white">Primary background</div>
+<div className="bg-success text-white">Success background</div>
+```
+
+## Best Practices
+
+- Use semantic color classes (primary, success, danger) for consistent theming
+- Ensure sufficient color contrast for accessibility (WCAG AA compliance)
+- Use muted colors for secondary information
+- Avoid using color alone to convey meaning - combine with icons or text
+
+## Accessibility Notes
+
+- All color combinations meet WCAG AA contrast requirements
+- Color is not the only way information is conveyed
+- Consider users with color vision deficiencies
+- Test color combinations in different lighting conditions

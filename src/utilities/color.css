@@ -1,0 +1,21 @@
+/* Color utilities */
+.text-primary { color: var(--digdir-color-primary); }
+.text-secondary { color: var(--digdir-color-secondary); }
+.text-success { color: var(--digdir-color-success); }
+.text-danger { color: var(--digdir-color-danger); }
+.text-warning { color: var(--digdir-color-warning); }
+.text-info { color: var(--digdir-color-info); }
+.text-muted { color: var(--digdir-color-muted); }
+.text-white { color: var(--digdir-color-white); }
+.text-black { color: var(--digdir-color-black); }
+
+.bg-primary { background-color: var(--digdir-color-primary); }
+.bg-secondary { background-color: var(--digdir-color-secondary); }
+.bg-success { background-color: var(--digdir-color-success); }
+.bg-danger { background-color: var(--digdir-color-danger); }
+.bg-warning { background-color: var(--digdir-color-warning); }
+.bg-info { background-color: var(--digdir-color-info); }
+.bg-muted { background-color: var(--digdir-color-muted); }
+.bg-white { background-color: var(--digdir-color-white); }
+.bg-black { background-color: var(--digdir-color-black); }
+.bg-transparent { background-color: transparent; }

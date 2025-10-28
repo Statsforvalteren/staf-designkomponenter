@@ -1,0 +1,39 @@
+/* Flexbox utilities */
+.flex { display: flex; }
+
+.flex-row { flex-direction: row; }
+.flex-col { flex-direction: column; }
+
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
+.flex-center { justify-content: center; align-items: center; }
+.flex-between { justify-content: space-between; }
+.flex-around { justify-content: space-around; }
+.flex-evenly { justify-content: space-evenly; }
+.flex-start { justify-content: flex-start; }
+.flex-end { justify-content: flex-end; }
+
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.items-stretch { align-items: stretch; }
+.items-baseline { align-items: baseline; }
+
+.justify-center { justify-content: center; }
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.justify-evenly { justify-content: space-evenly; }
+
+.gap-0 { gap: 0; }
+.gap-xs { gap: var(--digdir-spacing-xs); }
+.gap-sm { gap: var(--digdir-spacing-sm); }
+.gap-md { gap: var(--digdir-spacing-md); }
+.gap-lg { gap: var(--digdir-spacing-lg); }
+.gap-xl { gap: var(--digdir-spacing-xl); }
+
+.flex-1 { flex: 1; }
+.flex-auto { flex: auto; }
+.flex-none { flex: none; }
