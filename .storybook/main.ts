@@ -1,5 +1,6 @@
-/** @type { import('@storybook/react-vite').StorybookConfig } */
-const config = {
+import { StorybookConfig } from '@storybook/react-vite';
+
+const config: StorybookConfig = {
   framework: '@storybook/react-vite',
 
   stories: [
@@ -12,7 +13,8 @@ const config = {
   ],
 
   docs: {
-    autodocs: 'tag',
+    defaultName: "Dokumentasjon",
+    docsMode: false,
   },
 };
 
