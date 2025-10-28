@@ -1,59 +1,59 @@
 /* Table utilities */
-.u-table {
+.table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.u-table-responsive {
+.table-responsive {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-.u-table th,
-.u-table td {
+.table th,
+.table td {
   padding: var(--digdir-spacing-sm);
   text-align: left;
   border-bottom: 1px solid var(--digdir-color-muted);
 }
 
-.u-table th {
+.table th {
   font-weight: var(--digdir-font-weight-bold);
   background-color: var(--digdir-color-muted);
 }
 
-.u-table-hover tr:hover {
+.table-hover tr:hover {
   background-color: var(--digdir-color-muted);
 }
 
-.u-table-striped tr:nth-child(even) {
+.table-striped tr:nth-child(even) {
   background-color: var(--digdir-color-muted);
 }
 
 /* Stacked table for mobile */
 @media (max-width: 768px) {
-  .u-table-stacked {
+  .table-stacked {
     display: block;
   }
 
-  .u-table-stacked thead {
+  .table-stacked thead {
     display: none;
   }
 
-  .u-table-stacked tr {
+  .table-stacked tr {
     display: block;
     border: 1px solid var(--digdir-color-muted);
     margin-bottom: var(--digdir-spacing-sm);
     padding: var(--digdir-spacing-sm);
   }
 
-  .u-table-stacked td {
+  .table-stacked td {
     display: block;
     text-align: left;
     border: none;
     padding: var(--digdir-spacing-xs);
   }
 
-  .u-table-stacked td:before {
+  .table-stacked td:before {
     content: attr(data-label) ": ";
     font-weight: var(--digdir-font-weight-bold);
     display: inline-block;
