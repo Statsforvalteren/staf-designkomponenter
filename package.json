@@ -1,38 +1,30 @@
 {
-  "name": "staf-designkomponenter",
+  "name": "@statsforvalteren/staf-designkomponentar",
+  "description": "Bruk av digdir/designsystemet hos STAF med ekstra komponentar og tilpassingar.",
   "version": "0.1.0",
-  "description": "Bruk av digdir/designsystemet hos STAF med ekstra komponenter og tilpasninger.",
-  "keywords": [
-    "designsystemet",
-    "css",
-    "tokens"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "."
-  },
+  "keywords": ["designsystemet", "css", "tokens", "html", "react", "components"],
+  "repository": "https://github.com/Statsforvalteren/staf-designkomponenter.git",
   "license": "ISC",
-  "author": "",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/index.css",
   "scripts": {
     "build:css": "postcss src/index.css -o dist/index.css",
     "build:storybook": "storybook build",
+    "build": "npm run build:css && npm run build:storybook",
     "storybook": "storybook dev -p 6006",
-    "generate:cem": "cem analyze src --output-file custom-elements.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "@digdir/designsystemet": "^1.5.1",
-    "@digdir/designsystemet-css": "^1.7.1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@custom-elements-manifest/analyzer": "^0.10.10",
+    "@digdir/designsystemet": "^1.5.1",
+    "@digdir/designsystemet-css": "^1.7.1",
+    "@Statsforvalteren/designsystemet-theme": "npm:@statsforvalteren/designsystemet-theme@^1.0.0",
     "@storybook/addon-docs": "^10.0.0",
     "@storybook/react-vite": "^10.0.0",
     "@vitejs/plugin-react": "^4.2.1",
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
+    "postcss-import": "^16.1.1",
     "typescript": "^5.3.3",
     "vite": "^7.1.12"
   }
