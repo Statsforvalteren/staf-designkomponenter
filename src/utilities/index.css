@@ -1,7 +1,6 @@
-@import './_tokens.css';
-@import './spacing.css';
-@import './flex.css';
-@import './grid.css';
-@import './typography.css';
-@import './color.css';
-@import './table.css';
+@import './spacing.css' layer(staf);
+@import './flex.css' layer(staf);
+@import './grid.css' layer(staf);
+@import './typography.css' layer(staf);
+@import './color.css' layer(staf);
+@import './table.css' layer(staf);
