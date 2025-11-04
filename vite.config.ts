@@ -10,7 +10,7 @@ export default defineConfig({
     viteMinifyCSS(),
   ],
   build: {
-    cssCodeSplit: false, // export all css
+    cssCodeSplit: false, // export all css for components
     minify: false, // disable built-in minification
     lib: {
       entry: 'src/index.jsx',
@@ -21,4 +21,4 @@ export default defineConfig({
       external: ['react', 'react/jsx-runtime'],
     }
   },
-})
+});

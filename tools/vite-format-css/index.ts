@@ -2,7 +2,6 @@ import { Plugin } from 'vite';
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'path';
 import stylelint from 'stylelint';
-import stylelintConfig from '../../.stylelintrc.js';
 
 export function viteFormatCSS(): Plugin {
     return {
@@ -13,41 +12,38 @@ export function viteFormatCSS(): Plugin {
             const cssFile = path.join(distDir, 'index.css');
 
             try {
+                // Read the generated CSS file
                 const css = await readFile(cssFile, 'utf-8');
 
+                // Apply stylelint formatting with auto-fix
                 const result = await stylelint.lint({
                     code: css,
                     fix: true,
                     codeFilename: cssFile,
                 });
 
+                // Log any warnings from stylelint
+                try {
+                    var report = JSON.parse(result.report);
+                    var warnings = report?.[0].warnings || [];
+                    for (const warning of warnings) {
+                        console.warn(`⚠️  Stylelint: ${warning.text} [${warning.line}:${warning.column}]`);
+                    }
+                } catch (err) {
+                    // ignore JSON parse errors
+                    console.log("⚠️  ", err);
+                }
+
+                // Warn if no formatting was applied
                 if (!result.code) {
                     console.warn('⚠️ Could not format index.css: No formatting applied.');
                 }
+
+                // Write the formatted CSS back to the file or no changes if result.code is empty
                 let formatted = result.code || css;
 
-                // Get indentation from config (default to 4 if not found)
-                const indentSize = stylelintConfig.rules?.['@stylistic/indentation'] || 4;
-
-                // Fix @layer closing braces: when we have "} }" pattern, insert newline and proper indentation
-                formatted = formatted.replace(
-                    /(^[ \t]*)([^\n}]*)([ \t]*)(\}(?:[ \t]*\})*)/gm,
-                    ( _match, leadingSpace, content, trailingSpace, braces): string => {
-                        const currentIndent = leadingSpace.length;
-                        const braceList: string[] = braces.match(/\}/g) || [];
-
-                        const firstLine = content.trim()
-                            ? `${leadingSpace}${content}${trailingSpace}}`
-                            : `${leadingSpace}}`;
-
-                        const remainingBraces: string[] = braceList.slice(1).map((_, i) => {
-                            const indent = Math.max(0, currentIndent - indentSize * (i + 1));
-                            return `${' '.repeat(indent)}}`;
-                        });
-
-                        return [firstLine, ...remainingBraces].join('\n');
-                    }
-                );
+                // Additional manual fixes for specific brace formatting issues
+                formatted = formatted.replace(/^ }$/gm, '}');
 
                 await writeFile(cssFile, formatted);
                 console.log('✅ index.css formatted with stylelint');
