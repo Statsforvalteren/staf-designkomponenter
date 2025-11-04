@@ -1,7 +1,7 @@
 /* Margin utilities */
 .m-0 { margin: 0; }
-.m-md { margin: var(--ds-size--md); }
 .m-sm { margin: var(--ds-size--sm); }
+.m-md { margin: var(--ds-size--md); }
 .m-lg { margin: var(--ds-size--lg); }
 
 .mt-0 { margin-top: 0; }
