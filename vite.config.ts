@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { viteFormatCSS } from './tools/vite-format-css/index.ts'
-import { viteMinifyCSS } from './tools/vite-minify-css/index.ts'
+import { viteFormatCSS } from './tools/vite-format-css.ts'
+import { viteMinifyCSS } from './tools/vite-minify-css.ts'
 
 export default defineConfig({
   plugins: [
