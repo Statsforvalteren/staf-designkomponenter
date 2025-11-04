@@ -46,7 +46,7 @@ export function viteFormatCSS(): Plugin {
                 formatted = formatted.replace(/^ }$/gm, '}');
 
                 await writeFile(cssFile, formatted);
-                console.log('✅ index.css formatted with stylelint');
+                console.log('✅ Formatted CSS with stylelint (index.css)');
             } catch (err: unknown) {
                 if (err instanceof Error) {
                     console.warn('⚠️ Could not format index.css:', err.message);
