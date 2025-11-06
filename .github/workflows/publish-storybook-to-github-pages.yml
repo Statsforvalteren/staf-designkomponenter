@@ -3,7 +3,7 @@ name: Publish Storybook to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch: # Manual trigger for rebuilds, e.g., on dependency updates
 
 permissions:
