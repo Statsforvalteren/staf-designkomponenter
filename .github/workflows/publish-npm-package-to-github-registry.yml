@@ -10,17 +10,17 @@ concurrency:
   group: "deploy-npm-package"
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  packages: write
+
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   publish-package:
     name: Publish to GitHub Packages
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: write
 
     steps:
       - name: Checkout repository
@@ -34,14 +34,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        env:
-          GITHUB_TOKEN: $GITHUB_TOKEN
-          NODE_AUTH_TOKEN: $GITHUB_TOKEN
 
       - name: Build components
         run: npm run build:components
 
       - name: Publish to GitHub Packages
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: $GITHUB_TOKEN
