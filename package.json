@@ -1,7 +1,7 @@
 {
   "name": "@statsforvalteren/staf-designkomponentar",
   "description": "Bruk av digdir/designsystemet hos STAF med ekstra komponentar og tilpassingar.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "keywords": [
     "designsystemet",
     "css",
@@ -10,7 +10,7 @@
     "react",
     "components"
   ],
-  "repository": "https://github.com/Statsforvalteren/staf-designkomponenter.git",
+  "repository": "https://github.com/statsforvalteren/staf-designkomponenter.git",
   "license": "ISC",
   "type": "module",
   "main": "dist/index.css",
@@ -26,23 +26,22 @@
     "prepublishOnly": "npm run build:components"
   },
   "devDependencies": {
-    "@digdir/designsystemet": "^1.5.1",
     "@digdir/designsystemet-css": "^1.7.1",
-    "@Statsforvalteren/designsystemet-theme": "npm:@statsforvalteren/designsystemet-theme@^1.0.0",
-    "@storybook/addon-docs": "^10.0.0",
-    "@storybook/react-vite": "^10.0.0",
+    "@statsforvalteren/designsystemet-theme": "^1.0.0",
+    "@storybook/addon-docs": "^10.0.5",
+    "@storybook/react-vite": "^10.0.5",
     "@stylistic/stylelint-config": "^3.0.1",
     "@stylistic/stylelint-plugin": "^4.0.0",
     "@types/node": "^24.10.0",
     "@types/postcss-import": "^14.0.3",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^5.1.0",
     "cssnano": "^7.1.2",
-    "postcss": "^8.4.31",
+    "postcss": "^8.5.6",
     "postcss-import": "^16.1.1",
-    "storybook": "^10.0.4",
+    "storybook": "^10.0.5",
     "stylelint": "^16.25.0",
     "stylelint-config-standard": "^39.0.1",
-    "typescript": "^5.3.3",
-    "vite": "^7.1.12"
+    "typescript": "^5.9.3",
+    "vite": "^7.2.1"
   }
 }
