@@ -1,7 +1,7 @@
 {
   "name": "@statsforvalteren/staf-designkomponentar",
   "description": "Bruk av digdir/designsystemet hos STAF med ekstra komponentar og tilpassingar.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "keywords": [
     "designsystemet",
     "css",
@@ -14,13 +14,16 @@
   "license": "ISC",
   "type": "module",
   "main": "dist/index.css",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build:components": "vite build --config vite.config.ts --mode production",
     "build:storybook": "storybook build",
     "build": "npm run build:components && npm run build:storybook",
     "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build:components"
   },
   "devDependencies": {
     "@digdir/designsystemet": "^1.5.1",
@@ -36,6 +39,7 @@
     "cssnano": "^7.1.2",
     "postcss": "^8.4.31",
     "postcss-import": "^16.1.1",
+    "storybook": "^10.0.4",
     "stylelint": "^16.25.0",
     "stylelint-config-standard": "^39.0.1",
     "typescript": "^5.3.3",

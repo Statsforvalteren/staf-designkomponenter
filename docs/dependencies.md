@@ -58,6 +58,8 @@ When using typescript, some packages provides additional typing for the editor e
 
 ## Storybook
 
+- **storybook**
+    - Display how to use components and utilities.
 - **@storybook/addon-docs**
     - Adds improved support for component documentation.
 - **@storybook/react-vite**
