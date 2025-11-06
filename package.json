@@ -1,7 +1,7 @@
 {
   "name": "@statsforvalteren/staf-designkomponentar",
   "description": "Bruk av digdir/designsystemet hos STAF med ekstra komponentar og tilpassingar.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "keywords": [
     "designsystemet",
     "css",

@@ -2,7 +2,8 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - master
   workflow_dispatch: # Manual trigger for rebuilds, e.g., on dependency updates
 
 concurrency:
