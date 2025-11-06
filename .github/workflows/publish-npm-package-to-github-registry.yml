@@ -18,6 +18,10 @@ jobs:
     name: Publish to GitHub Packages
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      packages: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,6 +36,7 @@ jobs:
         run: npm ci
         env:
           GITHUB_TOKEN: $GITHUB_TOKEN
+          NODE_AUTH_TOKEN: $GITHUB_TOKEN
 
       - name: Build components
         run: npm run build:components
