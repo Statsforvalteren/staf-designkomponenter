@@ -14,13 +14,16 @@
   "license": "ISC",
   "type": "module",
   "main": "dist/index.css",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build:components": "vite build --config vite.config.ts --mode production",
     "build:storybook": "storybook build",
     "build": "npm run build:components && npm run build:storybook",
     "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build:components"
   },
   "devDependencies": {
     "@digdir/designsystemet": "^1.5.1",
