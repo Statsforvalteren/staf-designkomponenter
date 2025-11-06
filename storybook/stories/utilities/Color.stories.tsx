@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import '@digdir/designsystemet-css';
-import '@Statsforvalteren/designsystemet-theme/dist/staf-design.css';
+import '@statsforvalteren/designsystemet-theme/dist/staf-design.css';
 import "../../../src/utilities/color.css";
 
 const meta: Meta = {
