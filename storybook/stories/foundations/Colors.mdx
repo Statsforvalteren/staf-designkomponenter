@@ -1,4 +1,4 @@
-import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
 import * as Colors from './Colors.stories';
 
 <Meta title="Foundations/Colors" />
@@ -9,17 +9,84 @@ This section showcases the color tokens and utilities available in the design sy
 
 ## Color Tokens
 
-The following color tokens are available from the Digdir Design System:
+The following color tokens are available from the Statsforvalteren Design System:
 
-- `--digdir-color-primary`
-- `--digdir-color-secondary`
-- `--digdir-color-success`
-- `--digdir-color-danger`
-- `--digdir-color-warning`
-- `--digdir-color-info`
-- `--digdir-color-muted`
-- `--digdir-color-white`
-- `--digdir-color-black`
+<ColorPalette>
+    <ColorItem
+        title="theme.base.default"
+        subtitle='Base colors'
+        colors={{
+            brand1: 'var(--ds-color-brand1-base-default)',
+            brand2: 'var(--ds-color-brand2-base-default)',
+            brand3: 'var(--ds-color-brand3-base-default)',
+            info: 'var(--ds-color-info-base-default)',
+            success: 'var(--ds-color-success-base-default)',
+            warning: 'var(--ds-color-warning-base-default)',
+            danger: 'var(--ds-color-danger-base-default)',
+        }}
+    />
+    <ColorItem
+        title="theme.background.tinted"
+        subtitle='Tinted background colors'
+        colors={{
+            brand1: 'var(--ds-color-brand1-background-tinted)',
+            brand2: 'var(--ds-color-brand2-background-tinted)',
+            brand3: 'var(--ds-color-brand3-background-tinted)',
+            accent: 'var(--ds-color-accent-background-tinted)',
+            neutral: 'var(--ds-color-neutral-background-tinted)',
+            info: 'var(--ds-color-info-background-tinted)',
+            success: 'var(--ds-color-success-background-tinted)',
+            warning: 'var(--ds-color-warning-background-tinted)',
+            danger: 'var(--ds-color-danger-background-tinted)',
+        }}
+    />
+    <ColorItem
+        title="theme.text.default"
+        subtitle='Text colors'
+        colors={{
+            brand1: 'var(--ds-color-brand1-text-default)',
+            brand2: 'var(--ds-color-brand2-text-default)',
+            brand3: 'var(--ds-color-brand3-text-default)',
+            accent: 'var(--ds-color-accent-text-default)',
+            neutral: 'var(--ds-color-neutral-text-default)',
+            info: 'var(--ds-color-info-text-default)',
+            success: 'var(--ds-color-success-text-default)',
+            warning: 'var(--ds-color-warning-text-default)',
+            danger: 'var(--ds-color-danger-text-default)',
+        }}
+    />
+</ColorPalette>
+
+### Brand Base Colors
+- `--ds-color-brand1-base-default`: #00ADBA
+- `--ds-color-brand2-base-default`: #4C76BA
+- `--ds-color-brand3-base-default`: #BFC2C0
+- `--ds-color-info-base-default`: #0A71C0
+- `--ds-color-success-base-default`: #068718
+- `--ds-color-warning-base-default`: #EA9B1B
+- `--ds-color-danger-base-default`: #C01B1B
+
+### Background Colors (Tinted)
+- `--ds-color-brand1-background-tinted`: #e6f7f8
+- `--ds-color-brand2-background-tinted`: #f0f4f9
+- `--ds-color-brand3-background-tinted`: #f3f4f3
+- `--ds-color-accent-background-tinted`: #f2f4f6
+- `--ds-color-neutral-background-tinted`: #f3f3f4
+- `--ds-color-info-background-tinted`: #edf5fa
+- `--ds-color-success-background-tinted`: #ecf6ee
+- `--ds-color-warning-background-tinted`: #fcf2e2
+- `--ds-color-danger-background-tinted`: #fbf1f1
+
+### Text Colors (Default)
+- `--ds-color-brand1-text-default`: #003135
+- `--ds-color-brand2-text-default`: #1c2c45
+- `--ds-color-brand3-text-default`: #2b2c2b
+- `--ds-color-accent-text-default`: #092b54
+- `--ds-color-neutral-text-default`: #292c30
+- `--ds-color-info-text-default`: #042d4d
+- `--ds-color-success-text-default`: #023409
+- `--ds-color-warning-text-default`: #3c2807
+- `--ds-color-danger-text-default`: #590d0d
 
 ## Text Color Utilities
 
