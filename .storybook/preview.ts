@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/react';
+import '@digdir/designsystemet-css';
+import '@statsforvalteren/designsystemet-theme';
 import '../src/index.css';
 
 const preview: Preview = {

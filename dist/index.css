@@ -183,4 +183,9 @@
     .text-success { color: var(--ds-color-success-text-default); }
     .text-warning { color: var(--ds-color-warning-text-default); }
     .text-danger { color: var(--ds-color-danger-text-default); }
+
+    .surface-brand1 { background-color: var(--ds-color-brand1-surface-default); }
+    .surface-brand1.tinted { background-color: var(--ds-color-brand1-surface-tinted); }
+    .surface-brand1:hover { background-color: var(--ds-color-brand1-surface-hover); }
+    .surface-brand1:active { background-color: var(--ds-color-brand1-surface-active); }
 }
