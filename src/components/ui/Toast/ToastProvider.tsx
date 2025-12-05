@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useCallback, useRef, useEffect, useMemo, useId } from 'react';
+import React, { createContext, useReducer, useCallback, useRef, useEffect, useMemo } from 'react';
 import { Toast, ToastAction, ToastContextValue, ToastOptions } from './toast-provider.types';
 
 const ToastContext = createContext<ToastContextValue | undefined>(undefined);
@@ -21,10 +21,10 @@ interface ToastProviderProps {
   children: React.ReactNode;
 }
 
+
 export function ToastProvider({ children }: ToastProviderProps) {
   const [toasts, dispatch] = useReducer(toastReducer, []);
   const timeoutsRef = useRef<Map<string, NodeJS.Timeout>>(new Map());
-  const id = useId();
 
   const removeToast = useCallback((id: string) => {
     const timeout = timeoutsRef.current.get(id);
@@ -41,6 +41,7 @@ export function ToastProvider({ children }: ToastProviderProps) {
         type = 'success',
         position = 'top',
         duration = 5000,
+        id = `${Date.now()}-${Math.floor(Math.random() * 100)}`
       } = options;
 
       const toast: Toast = {
