@@ -1,5 +1,5 @@
 import { Plugin } from 'vite';
-import { readFile, writeFile } from 'fs/promises';
+import { readFile, writeFile, readdir } from 'fs/promises';
 import postcss from 'postcss';
 import cssnano from 'cssnano';
 import path from 'path';
@@ -9,13 +9,21 @@ export function viteMinifyCSS(): Plugin {
         name: 'vite-minify-css',
         apply: 'build',
         async closeBundle() {
-            // Define directory, source file and target files
             const distDir = path.resolve(process.cwd(), 'dist');
-            const cssFile = path.join(distDir, 'index.css');
-            const minCssFile = path.join(distDir, 'index.min.css');
-            const mapFile = `${minCssFile}.map`;
-
+            
             try {
+                const files = await readdir(distDir);
+                const cssFileName = files.find(f => f.endsWith('.css') && !f.endsWith('.min.css'));
+                
+                if (!cssFileName) {
+                    console.warn('⚠️ No CSS file found to minify');
+                    return;
+                }
+                
+                const cssFile = path.join(distDir, cssFileName);
+                const minCssFile = path.join(distDir, cssFileName.replace('.css', '.min.css'));
+                const mapFile = `${minCssFile}.map`;
+
                 // Read source file
                 const css = await readFile(cssFile, 'utf8');
 
@@ -36,14 +44,14 @@ export function viteMinifyCSS(): Plugin {
                     await writeFile(mapFile, result.map.toString(), 'utf8');
                 }
 
-                console.log(`✅ Minified CSS (index.min.css${(result.map ? ', index.min.css.map' : '')})`);
+                console.log(`✅ Minified CSS (${path.basename(minCssFile)}${result.map ? ', ' + path.basename(mapFile) : ''})`);
             } catch (err: unknown) {
                 if (err instanceof Error) {
-                    console.warn('⚠️ Could not generate index.min.css:', err.message)
+                    console.warn('⚠️ Could not minify CSS:', err.message);
                 } else {
-                    console.warn('⚠️ Could not generate index.min.css:', err)
+                    console.warn('⚠️ Could not minify CSS:', err);
                 }
             }
         }
-    }
+    };
 }

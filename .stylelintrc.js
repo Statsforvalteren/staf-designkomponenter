@@ -24,6 +24,7 @@ export default {
 
         // some useful formatting rules
         "@stylistic/declaration-colon-space-after": "always",
-        "@stylistic/declaration-block-semicolon-newline-after": "always-multi-line"
+        "@stylistic/declaration-block-semicolon-newline-after": "always-multi-line",
+        "selector-class-pattern": null
     }
 };
