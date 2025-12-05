@@ -1,7 +1,7 @@
 {
   "name": "@statsforvalteren/staf-designkomponentar",
   "description": "Bruk av digdir/designsystemet hos STAF med ekstra komponentar og tilpassingar.",
-  "version": "0.2.8",
+  "version": "0.3.1",
   "keywords": [
     "designsystemet",
     "css",
@@ -13,7 +13,20 @@
   "repository": "https://github.com/statsforvalteren/staf-designkomponenter.git",
   "license": "ISC",
   "type": "module",
-  "main": "dist/index.css",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    },
+    "./styles": "./dist/staf-designkomponentar.css"
+  },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
@@ -25,8 +38,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run build:components"
   },
+  "peerDependencies": {
+    "@digdir/designsystemet-css": "^1.7.1",
+    "@digdir/designsystemet-react": "^1.0.0",
+    "@statsforvalteren/designsystemet-theme": "^1.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
   "devDependencies": {
     "@digdir/designsystemet-css": "^1.7.1",
+    "@digdir/designsystemet-react": "^1.0.0",
     "@statsforvalteren/designsystemet-theme": "^1.0.0",
     "@storybook/addon-docs": "^10.0.5",
     "@storybook/react-vite": "^10.0.5",
@@ -34,14 +55,19 @@
     "@stylistic/stylelint-plugin": "^4.0.0",
     "@types/node": "^24.10.0",
     "@types/postcss-import": "^14.0.3",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^5.1.0",
     "cssnano": "^7.1.2",
     "postcss": "^8.5.6",
     "postcss-import": "^16.1.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "storybook": "^10.0.5",
     "stylelint": "^16.25.0",
     "stylelint-config-standard": "^39.0.1",
     "typescript": "^5.9.3",
-    "vite": "^7.2.1"
+    "vite": "^7.2.1",
+    "vite-plugin-dts": "^4.0.0"
   }
 }

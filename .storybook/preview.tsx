@@ -1,4 +1,8 @@
 import type { Preview } from '@storybook/react';
+import React from 'react';
+import { ToastProvider } from '../src/components/ui/Toast';
+import { ToastContainer } from '../src/components/ui/Toast';
+
 import '@digdir/designsystemet-css';
 import '@statsforvalteren/designsystemet-theme';
 import '../src/index.css';
@@ -17,9 +21,12 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => {
-      return Story();
-    },
+    (Story) => (
+      <ToastProvider>
+        <Story />
+        <ToastContainer />
+      </ToastProvider>
+    ),
   ],
   tags: ['autodocs'],
 };

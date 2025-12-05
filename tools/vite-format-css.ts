@@ -1,5 +1,5 @@
 import { Plugin } from 'vite';
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, readdir } from 'node:fs/promises';
 import path from 'path';
 import stylelint from 'stylelint';
 
@@ -9,23 +9,30 @@ export function viteFormatCSS(): Plugin {
         apply: 'build',
         async closeBundle() {
             const distDir = path.resolve(process.cwd(), 'dist');
-            const cssFile = path.join(distDir, 'index.css');
-
+            
             try {
-                // Read the generated CSS file
-                const css = await readFile(cssFile, 'utf-8');
+                const files = await readdir(distDir);
+                const cssFile = files.find(f => f.endsWith('.css') && !f.endsWith('.min.css'));
+                
+                if (!cssFile) {
+                    console.warn('⚠️ No CSS file found to format');
+                    return;
+                }
+                
+                const cssFilePath = path.join(distDir, cssFile);
+                const css = await readFile(cssFilePath, 'utf-8');
 
                 // Apply stylelint formatting with auto-fix
                 const result = await stylelint.lint({
                     code: css,
                     fix: true,
-                    codeFilename: cssFile,
+                    codeFilename: cssFilePath,
                 });
 
                 // Log any warnings from stylelint
                 try {
-                    var report = JSON.parse(result.report);
-                    var warnings = report?.[0].warnings || [];
+                    const report = JSON.parse(result.report);
+                    const warnings = report?.[0].warnings || [];
                     for (const warning of warnings) {
                         console.warn(`⚠️  Stylelint: ${warning.text} [${warning.line}:${warning.column}]`);
                     }
@@ -36,7 +43,7 @@ export function viteFormatCSS(): Plugin {
 
                 // Warn if no formatting was applied
                 if (!result.code) {
-                    console.warn('⚠️ Could not format index.css: No formatting applied.');
+                    console.warn(`⚠️ Could not format ${cssFile}: No formatting applied.`);
                 }
 
                 // Write the formatted CSS back to the file or no changes if result.code is empty
@@ -45,13 +52,13 @@ export function viteFormatCSS(): Plugin {
                 // Additional manual fixes for specific brace formatting issues
                 formatted = formatted.replace(/^ }$/gm, '}');
 
-                await writeFile(cssFile, formatted);
-                console.log('✅ Formatted CSS with stylelint (index.css)');
+                await writeFile(cssFilePath, formatted);
+                console.log(`✅ Formatted CSS with stylelint (${cssFile})`);
             } catch (err: unknown) {
                 if (err instanceof Error) {
-                    console.warn('⚠️ Could not format index.css:', err.message);
+                    console.warn('⚠️ Could not format CSS:', err.message);
                 } else {
-                    console.warn('⚠️ Could not format index.css:', err);
+                    console.warn('⚠️ Could not format CSS:', err);
                 }
             }
         }
