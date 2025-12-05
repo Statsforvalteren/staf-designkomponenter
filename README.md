@@ -29,7 +29,7 @@ This project uses private GitHub packages. You need a **GitHub Personal Access T
 
 2. Add the token to your environment:
 
-- This project contains a `.npmrc` file that reads the token from your environment. You must set the variable OS-level variable in order to be able to publish. 
+- This project contains a `.npmrc` file that reads the token from your environment. You must set the OS-level environment variable in order to be able to publish. 
 
    **macOS/Linux** using Zsh or Bash (add to `~/.zshrc` or `~/.bashrc`):
 ```bash
@@ -54,6 +54,14 @@ Add `STAF_COMPONENTS_GITHUB_TOKEN` to repository secrets/variables in GitHub Act
 ### Installation
 ```bash
 npm install @statsforvalteren/staf-designkomponentar
+```
+
+### Usage
+
+Import the CSS styles at the root of your application (e.g., in `layout.tsx` or `App.tsx`):
+
+```tsx
+import '@statsforvalteren/staf-designkomponentar/styles';
 ```
 
 ### Peer Dependencies
