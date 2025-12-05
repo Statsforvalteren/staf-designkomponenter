@@ -42,8 +42,8 @@
     "@digdir/designsystemet-css": "^1.7.1",
     "@digdir/designsystemet-react": "^1.0.0",
     "@statsforvalteren/designsystemet-theme": "^1.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@digdir/designsystemet-css": "^1.7.1",
