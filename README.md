@@ -23,6 +23,7 @@ This project uses private GitHub packages. You need a **GitHub Personal Access T
    - Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
    - Click "Generate new token (classic)"
    - Select the `read:packages` scope
+   - If you need to publish, select the `write:packages` scope (this automatically includes read access).
    - Generate and copy the token
 
 
